@@ -259,7 +259,7 @@ boolean Lorro_BQ4050::readDataReg( char devAddress, byte regAddress, byte *dataV
   //Add the one byte register address
   Wire.write( regAddress );
   //Send out buffer and log response
-  byte ack = Wire.endTransmission();
+  byte ack = Wire.endTransmission(false);
   //If data is ackowledged, proceed
   if( ack == 0 ){
     //Request a number of bytes from the device address
